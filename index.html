@@ -6,13 +6,15 @@
   <title>Ken Daniel Llamanzares — Portfolio</title>
   <meta name="description" content="Portfolio — Ken Daniel Llamanzares | Computer Engineering: IoT, Embedded Systems, Computer Vision, DSP" />
   <link rel="icon" href="data:," />
+  <!-- Google Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     /* Unified theme using CSS variables so light/dark are exact variants */
     :root{
       --bg-dark:#0b1220; --card-dark:#0f1724; --accent-dark:#06b6d4; --muted-dark:#9aa8bb; --text-dark:#e6eef6; --glass-dark:rgba(255,255,255,0.03);
       --bg-light:#f7fafc; --card-light:#ffffff; --accent-light:#0ea5a4; --muted-light:#475569; --text-light:#071124; --glass-light:rgba(2,6,23,0.04);
 
-      --radius:14px; --maxw:980px; --mono: 'Segoe UI', Roboto, Arial, sans-serif;
+      --radius:14px; --maxw:980px; --mono: 'Inter', var(--mono-fallback, 'Segoe UI', Roboto, Arial, sans-serif); --mono-fallback: 'Segoe UI';
     }
 
     /* base variables default to dark theme */
@@ -20,32 +22,35 @@
     body.light{ --bg:var(--bg-light); --card:var(--card-light); --accent:var(--accent-light); --muted:var(--muted-light); --text:var(--text-light); --glass:var(--glass-light); }
 
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:var(--mono);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;transition:background .25s ease,color .25s ease}
+    html,body{height:100%;margin:0;font-family:Inter, var(--mono-fallback);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;transition:background .25s ease,color .25s ease}
 
     /* Layout */
-    .wrap{max-width:var(--maxw);margin:48px auto;padding:32px}
-    header{display:flex;align-items:center;gap:20px;margin-bottom:28px}
+    .wrap{max-width:var(--maxw);margin:48px auto;padding:28px}
+    header{display:flex;align-items:center;gap:20px;margin-bottom:26px}
     .logo{display:flex;align-items:center;gap:14px}
 
     /* chip and glass use card and glass variables */
-    .chip{width:56px;height:56px;border-radius:12px;display:inline-grid;place-items:center;border:1px solid var(--glass);box-shadow:0 8px 30px rgba(2,6,23,0.25);background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
-    .brand h1{font-size:20px;margin:0}
+    .chip{width:56px;height:56px;border-radius:12px;display:inline-grid;place-items:center;border:1px solid var(--glass);box-shadow:0 10px 40px rgba(2,6,23,0.28);background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .brand h1{font-size:20px;margin:0;font-weight:700}
     .brand p{margin:2px 0 0 0;color:var(--muted);font-size:13px}
 
-    nav{margin-left:auto}
-    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600}
+    nav{margin-left:auto;display:flex;align-items:center;gap:10px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:8px;font-weight:600;padding:6px 10px;border-radius:8px}
     nav a.btn{padding:8px 12px;border-radius:8px;border:1px solid var(--glass);background:transparent;color:var(--text)}
+
+    /* subtle divider under header */
+    header{border-bottom:1px solid rgba(255,255,255,0.02);padding-bottom:20px}
 
     /* Hero */
     .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start}
     @media(max-width:900px){.hero{grid-template-columns:1fr}}
 
-    .intro{padding:24px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid var(--glass);box-shadow:0 8px 30px rgba(2,6,23,0.12)}
-    .intro h2{margin:0 0 8px 0;font-size:28px}
+    .intro{padding:24px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid var(--glass);box-shadow:0 8px 30px rgba(2,6,23,0.08)}
+    .intro h2{margin:0 0 8px 0;font-size:28px;line-height:1.15}
     .intro p.lead{color:var(--muted);margin:0 0 16px 0}
     .cta{display:flex;gap:12px;margin-top:14px}
     .cta a{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-    .cta a.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021024;border:0}
+    .cta a.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021024;border:0;box-shadow:0 8px 30px rgba(2,6,23,0.06)}
     .cta a.ghost{border:1px solid var(--glass);color:var(--text);background:transparent}
 
     /* Projects grid */
@@ -53,11 +58,13 @@
     @media(max-width:900px){.projects-grid{grid-template-columns:1fr}}
 
     /* card style uses unified variables so it looks identical in both themes */
-    .card-proj{padding:18px;border-radius:12px;background:var(--card);border:1px solid var(--glass);transition:transform .25s ease,box-shadow .25s ease;color:var(--text)}
-    .card-proj:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(2,6,23,0.12)}
-    .card-proj h3{margin:0 0 8px 0}
+    .card-proj{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:12px;background:var(--card);border:1px solid var(--glass);transition:transform .22s cubic-bezier(.2,.9,.3,1),box-shadow .22s cubic-bezier(.2,.9,.3,1);color:var(--text)}
+    .card-proj:hover{transform:translateY(-6px);box-shadow:0 18px 60px rgba(2,6,23,0.12)}
+    .card-proj .thumb{width:120px;height:80px;border-radius:8px;background:linear-gradient(180deg,rgba(0,0,0,0.08),rgba(255,255,255,0.02));flex-shrink:0;display:block;object-fit:cover}
+    .card-proj .proj-body{flex:1}
+    .card-proj h3{margin:0 0 6px 0;font-size:16px}
     .card-proj p{margin:0;color:var(--muted);font-size:14px}
-    .card-proj .meta{margin-top:12px;color:var(--muted);font-size:13px}
+    .card-proj .meta{margin-top:10px;color:var(--muted);font-size:13px}
     .card-proj .links{margin-top:12px;display:flex;gap:8px}
     .card-proj a{padding:8px 10px;border-radius:8px;text-decoration:none;border:1px solid var(--glass);color:var(--text);font-weight:600}
 
@@ -74,9 +81,11 @@
     .reveal.visible{opacity:1;transform:none}
 
     /* particles overlay (kept subtle) */
-    #bgParticles{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none;mix-blend-mode:screen;opacity:0.5}
+    #bgParticles{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none;mix-blend-mode:screen;opacity:0.45}
     main, header, footer, .wrap{position:relative;z-index:1}
 
+    /* small responsive tweaks */
+    @media(max-width:560px){.chip{width:48px;height:48px}.brand h1{font-size:18px}.intro h2{font-size:22px}}
   </style>
 </head>
 <body>
@@ -136,38 +145,7 @@
         </aside>
       </section>
 
-      <section id="projects" style="margin-top:28px">
-        <h3 style="margin:0 0 12px 0">Selected Projects</h3>
-        <div class="projects-grid">
-          <div class="card-proj reveal">
-            <h3>ASFrotect — Dual-Camera ASF Surveillance</h3>
-            <p>Raspberry Pi + Thermal + Pi Cam. Real-time detection and streaming with YOLO models and a React + Firebase dashboard for alerts and logging.</p>
-            <div class="meta">Raspberry Pi • YOLO • Thermal Camera</div>
-            <div class="links"><a href="https://github.com/llamanzaresekd/ASFrotect" target="_blank">View repo</a><a href="#">Live demo</a></div>
-          </div>
-
-          <div class="card-proj reveal">
-            <h3>Digital Ears — Emotion Detection (MATLAB)</h3>
-            <p>GUI app that extracts MFCCs and classifies emotions from speech. Includes training pipeline and GUI for analysis.</p>
-            <div class="meta">MATLAB • DSP • MFCC</div>
-            <div class="links"><a href="https://github.com/llamanzaresekd/DigitalEars-MATLAB" target="_blank">View repo</a></div>
-          </div>
-
-          <div class="card-proj reveal">
-            <h3>NPK Soil Monitoring System</h3>
-            <p>Arduino-based NPK sensor integration with serial output and data logging. Simplified logic and threshold alerts.</p>
-            <div class="meta">Arduino • Sensors • Data Logging</div>
-            <div class="links"><a href="https://github.com/llamanzaresekd/NPK-Soil-Monitoring" target="_blank">View repo</a></div>
-          </div>
-
-          <div class="card-proj reveal">
-            <h3>MiniBot — Cloud-Controlled Embedded Robot</h3>
-            <p>Wi‑Fi mini-robot using Arduino & ESP32, controlled by Firebase Realtime Database for real-time remote operation.</p>
-            <div class="meta">ESP32 • Firebase • Robotics</div>
-            <div class="links"><a href="https://github.com/llamanzaresekd/MiniBot" target="_blank">View repo</a></div>
-          </div>
-        </div>
-      </section>
+      
 
       <section style="margin-top:28px">
         <h3 style="margin:0 0 12px 0">Academic Projects</h3>
