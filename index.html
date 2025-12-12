@@ -3,53 +3,81 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BYMS — Portfolio</title>
-  <meta name="description" content="Portfolio — BYMS | Computer Engineering student: IoT, Embedded Systems, Computer Vision, DSP" />
+  <title>Ken Daniel Llamanzares — Portfolio</title>
+  <meta name="description" content="Portfolio — KDMS | Computer Engineering student: IoT, Embedded Systems, Computer Vision, DSP" />
   <link rel="icon" href="data:," />
   <style>
     :root{
-      --bg:#ffffff; --accent:#16a34a; --muted:#6b7280; --card:#f8fafc; --mono: 'Segoe UI', Roboto, Arial, sans-serif;
+      --bg:#0f172a; --panel:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --card:#071025; --mono: 'Segoe UI', Roboto, Arial, sans-serif;
+      --text:#e6eef6; --muted-2:#cbd5e1;
     }
+    body.light{ --bg: #f8fafc; --panel:#ffffff; --accent:#06b6d4; --muted:#475569; --card:#ffffff; --text:#0f172a; --muted-2:#334155 }
     *{box-sizing:border-box}
-    body{font-family:var(--mono);margin:0;background:var(--bg);color:#111}
-    header{background:linear-gradient(90deg,rgba(22,163,74,0.08),transparent);padding:32px 20px}
-    .container{max-width:960px;margin:0 auto;padding:24px}
+    html,body{height:100%}
+    body{font-family:var(--mono);margin:0;background:radial-gradient(1200px 600px at 10% 10%, rgba(6,182,212,0.04), transparent), linear-gradient(180deg,#020617 0%, #071026 100%);color:var(--text);transition:background 250ms ease,color 250ms ease}
+    body.light{background:linear-gradient(180deg,#f8fafc 0%, #eef2ff 100%)}
+    header{background:linear-gradient(90deg, rgba(6,182,212,0.06), transparent);padding:36px 20px;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:1040px;margin:0 auto;padding:24px}
     .brand{display:flex;gap:16px;align-items:center}
-    .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#10b981);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:28px}
-    h1{margin:0;font-size:28px}
-    p.lead{color:var(--muted);margin-top:8px}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:24px}
-    @media(max-width:840px){.grid{grid-template-columns:1fr}}
-    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+    h1{margin:0;font-size:28px;font-weight:700;letter-spacing:0.2px}
+    p.lead{color:var(--muted);margin-top:6px}
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:24px;margin-top:26px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    body.light .card{box-shadow:0 6px 24px rgba(15,23,42,0.04);border:1px solid rgba(2,6,23,0.04);background:var(--card)}
     .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .section-title h2{color:var(--text)}
     ul.skills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
-    ul.skills li{background:#eefaf1;color:#065f46;padding:8px 10px;border-radius:999px;font-size:13px}
-    .projects{display:flex;flex-direction:column;gap:12px}
-    .proj{padding:12px;border-radius:10px;background:#fff;border:1px solid rgba(15,23,42,0.04)}
-    .proj h3{margin:0;font-size:16px}
-    .proj p{margin:6px 0 0;color:var(--muted);font-size:14px}
+    ul.skills li{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#d1e8f0;padding:8px 10px;border-radius:8px;font-size:13px;font-family:monospace}
+    body.light ul.skills li{color:var(--muted-2);border-color:rgba(2,6,23,0.06)}
+    .projects{display:flex;flex-direction:column;gap:14px}
+    .proj{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.03)}
+    body.light .proj{background:linear-gradient(180deg, rgba(2,6,23,0.02), transparent);border:1px solid rgba(2,6,23,0.04)}
+    .proj h3{margin:0;font-size:16px;color:var(--text)}
+    .proj p{margin:8px 0 0;color:var(--muted-2);font-size:14px}
     .links{display:flex;gap:8px;margin-top:12px}
-    a.btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(2,6,23,0.06);font-weight:600}
-    a.primary{background:var(--accent);color:#fff;border:0}
+    a.btn{display:inline-block;padding:9px 12px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.06);font-weight:600;background:transparent;color:inherit}
+    a.btn:hover{transform:translateY(-2px)}
+    a.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021024;border:0;box-shadow:0 8px 30px rgba(6,182,212,0.08)}
     footer{padding:32px 0;color:var(--muted);text-align:center}
     .meta{font-size:13px;color:var(--muted)}
     .contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
     .contact-list a{color:inherit;text-decoration:none}
-    code.snip{display:block;background:#0f172a;color:#e2e8f0;padding:8px;border-radius:6px;font-size:13px}
+    code.snip{display:block;background:#021024;color:var(--accent);padding:8px;border-radius:6px;font-size:13px;font-family:monospace}
+    /* small techy accent */
+    .hex-grid{position:absolute;right:-60px;top:8px;opacity:0.06;width:320px;height:120px;background:repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 20px)}
+
+    /* particles canvas */
+    #bgParticles{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none;mix-blend-mode:screen;opacity:0.6}
+    main, header, footer, .container{position:relative;z-index:1}
+
+    /* theme toggle */
+    .theme-toggle{margin-left:auto;display:inline-flex;align-items:center;gap:8px}
+    .toggle-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:999px;cursor:pointer}
+    body.light .toggle-btn{border-color:rgba(2,6,23,0.06)}
+
   </style>
 </head>
 <body>
   <header>
     <div class="container">
       <div class="brand">
-        <div class="avatar">BY</div>
+        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);box-shadow:0 0 14px rgba(6,182,212,0.25);background:rgba(255,255,255,0.02);">
+  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+  <path d="M7 3v4M17 3v4M7 17v4M17 17v4M3 7h4M17 7h4M3 17h4M17 17h4"></path>
+</svg>
         <div>
-          <h1>BYMS — Computer Engineering Student</h1>
+          <h1>Ken Daniel Llamanzares — Computer Engineering Student</h1>
           <p class="lead">IoT · Embedded Systems · Computer Vision · DSP · Full-stack dashboards</p>
+        </div>
+
+        <div class="theme-toggle" aria-hidden="false">
+          <button id="themeToggle" class="toggle-btn" title="Toggle light / dark">Toggle</button>
         </div>
       </div>
     </div>
   </header>
+  <canvas id="bgParticles" aria-hidden="true"></canvas>
 
   <main class="container">
     <div class="grid">
@@ -97,7 +125,7 @@
           <p class="meta">Download or link these from your résumé / LinkedIn:</p>
           <code class="snip">https://yourusername.github.io</code>
           <div style="margin-top:12px" class="links">
-            <a class="btn" href="#">Download CV (PDF)</a>
+            <a class="btn" href="Ken_Daniel_Llamanzares_CV.pdf" download>Download CV (PDF)</a>
             <a class="btn primary" href="#">LinkedIn</a>
           </div>
         </section>
@@ -108,7 +136,7 @@
         <div class="card">
           <h3>Contact</h3>
           <ul class="contact-list">
-            <li><a href="mailto:you@example.com">you@example.com</a></li>
+            <li><a href="mailto:kd.llamanzares@gmail.com">kd.llamanzares@gmail.com</a></li>
             <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></li>
             <li><a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></li>
           </ul>
@@ -121,7 +149,7 @@
 
         <div style="margin-top:12px" class="card">
           <h4>Customize</h4>
-          <p class="meta">Replace placeholders: <strong>BYMS</strong>, email, repo links, and project descriptions. To change colors, edit <code>--accent</code> in the &lt;style&gt; root.</p>
+          <p class="meta">Replace placeholders: name, email, repo links, and project descriptions. To change colors, edit <code>--accent</code> in the &lt;style&gt; root.</p>
         </div>
 
       </aside>
@@ -130,13 +158,81 @@
 
   <footer>
     <div class="container">
-      <div class="meta">© <span id="year"></span> BYMS — Built with HTML & CSS • Hosted on GitHub Pages</div>
+      <div class="meta">© <span id="year"></span> Ken Daniel Llamanzares — Built with HTML & CSS • Hosted on GitHub Pages</div>
     </div>
   </footer>
 
   <script>
+    // show year
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Small helper: if user clicks "View repo" or other anchor placeholders, you can replace hrefs programmatically
+
+    // Theme toggle with persistence
+    const themeToggle = document.getElementById('themeToggle');
+    const current = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    if(current === 'light') document.body.classList.add('light');
+    function toggleTheme(){
+      document.body.classList.toggle('light');
+      const isLight = document.body.classList.contains('light') ? 'light' : 'dark';
+      localStorage.setItem('theme', isLight);
+      themeToggle.textContent = isLight === 'light' ? 'Light' : 'Dark';
+    }
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggle.textContent = document.body.classList.contains('light') ? 'Light' : 'Dark';
+
+    // Simple floating particles using canvas
+    (function(){
+      const canvas = document.getElementById('bgParticles');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      function resize(){
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      function rand(min,max){return Math.random()*(max-min)+min}
+      function createParticle(){
+        return {
+          x: rand(0,canvas.width),
+          y: canvas.height + rand(0,200),
+          r: rand(0.6,2.2),
+          vx: rand(-0.2,0.2),
+          vy: rand(-0.4,-1.2),
+          alpha: rand(0.08,0.35),
+          hue: rand(180,200)
+        }
+      }
+
+      function init(){
+        particles = new Array(Math.floor((canvas.width*canvas.height)/80000)).fill(0).map(createParticle);
+      }
+      init();
+
+      function step(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        for(let p of particles){
+          p.x += p.vx; p.y += p.vy; p.alpha *= 0.9998;
+          if(p.y < -50 || p.alpha < 0.02 || p.x < -50 || p.x > canvas.width+50){
+            Object.assign(p, createParticle());
+            p.y = canvas.height + rand(0,200);
+          }
+          ctx.beginPath();
+          const grad = ctx.createRadialGradient(p.x,p.y,p.r*0.1,p.x,p.y,p.r*6);
+          const color = `hsla(${Math.floor(p.hue)},80%,60%,${p.alpha})`;
+          grad.addColorStop(0, color);
+          grad.addColorStop(1, 'rgba(0,0,0,0)');
+          ctx.fillStyle = grad;
+          ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+          ctx.fill();
+        }
+        requestAnimationFrame(step);
+      }
+      step();
+
+      // Re-init on theme change for subtle variance
+      themeToggle.addEventListener('click', ()=>{ init(); });
+    })();
   </script>
 </body>
 </html>
