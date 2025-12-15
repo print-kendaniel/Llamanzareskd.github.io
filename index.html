@@ -1,156 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ken Daniel Llamanzares — Portfolio</title>
-  <meta name="description" content="Portfolio — Ken Daniel Llamanzares | Computer Engineering: IoT, Embedded Systems, Computer Vision, DSP" />
-  <link rel="icon" href="data:," />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ken Daniel Llamanzares — Portfolio</title>
 
-  <style>
-    :root{
-      --bg-dark:#0b1220; --card-dark:#0f1724; --accent-dark:#06b6d4;
-      --muted-dark:#9aa8bb; --text-dark:#e6eef6; --glass-dark:rgba(255,255,255,0.03);
-      --radius:14px; --maxw:980px;
-    }
-    :root{
-      --bg:var(--bg-dark); --card:var(--card-dark);
-      --accent:var(--accent-dark); --muted:var(--muted-dark);
-      --text:var(--text-dark); --glass:var(--glass-dark);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text)}
+<style>
+:root{
+  --bg:#0b1220;
+  --card:#0f1724;
+  --glass:rgba(255,255,255,0.05);
+  --text:#e6eef6;
+  --muted:#9aa8bb;
+  --accent:#06b6d4;
+  --radius:14px;
+  --maxw:1000px;
+}
 
-    .wrap{max-width:var(--maxw);margin:48px auto;padding:28px}
-    header{display:flex;align-items:center;gap:20px;border-bottom:1px solid var(--glass);padding-bottom:20px}
-    .logo{display:flex;align-items:center;gap:14px}
-    .chip{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--glass)}
-    nav{margin-left:auto;display:flex;gap:10px}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    nav a.btn{
-      padding:8px 12px;border-radius:8px;border:1px solid var(--glass);
-      color:var(--text);text-decoration:none;font-weight:600;
-      display:flex;align-items:center;gap:6px;
-    }
+.wrap{
+  max-width:var(--maxw);
+  margin:48px auto;
+  padding:28px;
+}
 
-    main{margin-top:28px}
-    .hero{display:grid;grid-template-columns:1fr 320px;gap:28px}
-    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--glass);
+  padding-bottom:20px;
+}
+.logo{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+.badge{
+  width:46px;height:46px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--glass);
+}
+nav{
+  display:flex;
+  gap:10px;
+}
+nav a{
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid var(--glass);
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+}
 
-    .intro,.card{padding:18px;border-radius:12px;background:var(--card);border:1px solid var(--glass)}
-    .intro h2{margin-top:0}
+/* LAYOUT */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:28px;
+  margin-top:32px;
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+}
 
-    .cta{display:flex;gap:12px;margin-top:14px}
-    .cta a{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-    .primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021024}
-    .ghost{border:1px solid var(--glass);color:var(--text)}
+.card{
+  background:var(--card);
+  border:1px solid var(--glass);
+  border-radius:var(--radius);
+  padding:20px;
+}
 
-    /* SOCIAL BUTTONS */
-    .socials{display:flex;gap:10px;flex-wrap:wrap}
-    .social-btn{
-      display:flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:10px;
-      border:1px solid var(--glass);
-      text-decoration:none;color:var(--text);
-      font-weight:600;
-    }
-    .social-btn svg{width:18px;height:18px}
+/* BUTTONS */
+.cta{
+  display:flex;
+  gap:12px;
+  margin-top:16px;
+}
+.cta a{
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+}
+.primary{
+  background:linear-gradient(90deg,var(--accent),#7c3aed);
+  color:#021024;
+}
+.ghost{
+  border:1px solid var(--glass);
+  color:var(--text);
+}
 
-    footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
-  </style>
+/* SECTIONS */
+section{margin-top:36px}
+h2,h3{margin-top:0}
+
+/* SKILLS */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.skill{
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid var(--glass);
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* PROJECTS */
+.project{
+  padding:16px;
+  border-radius:12px;
+  border:1px solid var(--glass);
+  margin-bottom:14px;
+}
+.project h4{margin:0 0 6px}
+
+/* SOCIALS */
+.socials{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.social{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid var(--glass);
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+}
+.social svg{width:18px;height:18px}
+
+footer{
+  text-align:center;
+  margin-top:40px;
+  color:var(--muted);
+  font-size:13px;
+}
+</style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">
-      <div class="chip">
-        <strong>KD</strong>
-      </div>
-      <div>
-        <h1 style="margin:0">Ken Daniel Llamanzares</h1>
-        <p style="margin:0;color:var(--muted);font-size:13px">
-          Computer Engineering • IoT · Embedded · CV · DSP
-        </p>
-      </div>
+<header>
+  <div class="logo">
+    <div class="badge">KD</div>
+    <div>
+      <h1 style="margin:0">Ken Daniel Llamanzares</h1>
+      <p style="margin:0;color:var(--muted)">
+        Computer Engineering • IoT · Embedded · CV · DSP
+      </p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="https://www.linkedin.com/in/ken-daniel-llamanzares-b6a0883a0" target="_blank">LinkedIn</a>
+    <a href="LlamanzaresKD_Resume.pdf" target="_blank">Resume</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="card">
+    <h2>Hi, I’m Ken — I build IoT & AI systems for real-world problems.</h2>
+    <p style="color:var(--muted)">
+      Computer Engineering student focused on embedded systems, computer vision,
+      signal processing, and hardware–software integration.
+    </p>
+
+    <div class="cta">
+      <a class="primary" href="LlamanzaresKD_Resume.pdf" download>Download CV</a>
+      <a class="ghost" href="#projects">View Projects</a>
     </div>
 
-    <nav>
-      <a class="btn" href="#projects">Projects</a>
+    <!-- SKILLS -->
+    <section>
+      <h3>Skills</h3>
+      <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">Embedded Systems</span>
+        <span class="skill">IoT Development</span>
+        <span class="skill">Sensor Calibration</span>
+        <span class="skill">Computer Vision</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">MATLAB (DSP)</span>
+        <span class="skill">Cybersecurity Fundamentals</span>
+        <span class="skill">Hardware–Software Debugging</span>
+      </div>
+    </section>
+  </div>
 
-      <a class="btn"
-         href="https://www.linkedin.com/in/ken-daniel-llamanzares-b6a0883a0"
-         target="_blank">
-        <!-- LinkedIn SVG -->
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.48 1 4.98 2.12 4.98 3.5zM.22 8h4.56v15H.22V8zM8.09 8h4.37v2.05h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 6.99V23h-4.56v-6.7c0-1.6-.03-3.66-2.23-3.66-2.23 0-2.57 1.74-2.57 3.54V23H8.09V8z"/>
-        </svg>
+  <!-- CONTACT -->
+  <aside class="card">
+    <h3>Contact</h3>
+    <a href="mailto:kd.llamanzares@gmail.com">kd.llamanzares@gmail.com</a>
+
+    <div class="socials">
+      <a class="social" href="https://github.com/llamanzaresekd" target="_blank">
+        GitHub
+      </a>
+      <a class="social" href="https://www.linkedin.com/in/ken-daniel-llamanzares-b6a0883a0" target="_blank">
         LinkedIn
       </a>
+    </div>
+  </aside>
+</section>
 
-      <a class="btn" href="LlamanzaresKD_Resume.pdf" target="_blank">Resume</a>
-    </nav>
-  </header>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Academic Projects</h2>
 
-  <!-- MAIN -->
-  <main>
-    <section class="hero">
-      <div class="intro">
-        <h2>Hi, I’m Ken — I build IoT & AI systems for real-world problems.</h2>
-        <p style="color:var(--muted)">
-          Computer Engineering student focused on embedded systems,
-          computer vision, and signal processing.
-        </p>
+  <div class="project">
+    <h4>SwineWatch — ASF Detection System</h4>
+    <p>Thermal + Raspberry Pi camera system for early ASF detection. React dashboard, Firebase realtime data, Cloudinary image storage.</p>
+  </div>
 
-        <div class="cta">
-          <a class="primary" href="LlamanzaresKD_Resume.pdf" download>Download CV</a>
-          <a class="ghost" href="#projects">View Projects</a>
-        </div>
-      </div>
+  <div class="project">
+    <h4>Digital Ears — Emotion Detection (MATLAB)</h4>
+    <p>Speech emotion recognition using Short-Time Energy and Mean Energy features with full DSP workflow.</p>
+  </div>
 
-      <!-- CONTACT CARD -->
-      <aside class="card" id="contact">
-        <h4>Contact</h4>
-        <p><a href="mailto:kd.llamanzares@gmail.com">kd.llamanzares@gmail.com</a></p>
+  <div class="project">
+    <h4>NPK Soil Monitoring System</h4>
+    <p>Arduino-based nutrient monitoring with sensor calibration, threshold logic, and serial data logging.</p>
+  </div>
 
-        <div class="socials">
-          <a class="social-btn"
-             href="https://github.com/llamanzaresekd"
-             target="_blank">
-            <!-- GitHub SVG -->
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56v-2.02c-3.2.7-3.88-1.54-3.88-1.54-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.72-1.55-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.19-3.07-.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18 1.17a11.1 11.1 0 0 1 5.8 0c2.2-1.48 3.17-1.17 3.17-1.17.64 1.57.24 2.73.12 3.02.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.07.78 2.16v3.2c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
-            </svg>
-            GitHub
-          </a>
+  <div class="project">
+    <h4>MiniBot — Cloud-Controlled Robot</h4>
+    <p>ESP32 + Firebase controlled robot with realtime command synchronization and motor control.</p>
+  </div>
+</section>
 
-          <a class="social-btn"
-             href="https://www.linkedin.com/in/ken-daniel-llamanzares-b6a0883a0"
-             target="_blank">
-            <!-- LinkedIn SVG -->
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.48 1 4.98 2.12 4.98 3.5zM.22 8h4.56v15H.22V8zM8.09 8h4.37v2.05h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 6.99V23h-4.56v-6.7c0-1.6-.03-3.66-2.23-3.66-2.23 0-2.57 1.74-2.57 3.54V23H8.09V8z"/>
-            </svg>
-            LinkedIn
-          </a>
-        </div>
-      </aside>
-    </section>
-  </main>
+<!-- CERTIFICATIONS -->
+<section>
+  <h2>Certifications</h2>
+  <ul style="color:var(--muted)">
+    <li>Lean Six Sigma White Belt — Ask Lex PH</li>
+    <li>ISC2 Candidate</li>
+    <li>Introduction to Cybersecurity — Cisco</li>
+    <li>TensorFlow & OpenCV Bootcamps</li>
+    <li>TESDA Computer System Servicing NC II</li>
+  </ul>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © <span id="year"></span> Ken Daniel Llamanzares
-  </footer>
+<!-- EDUCATION -->
+<section>
+  <h2>Education</h2>
+  <p>
+    <strong>BS Computer Engineering</strong><br>
+    National University – Laguna (2022–Present)
+  </p>
+</section>
+</main>
+
+<footer>
+  © <span id="year"></span> Ken Daniel Llamanzares
+</footer>
 
 </div>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
