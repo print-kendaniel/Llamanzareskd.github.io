@@ -107,7 +107,7 @@ nav a{
 
 /* SECTIONS */
 section{margin-top:36px}
-h2,h3{margin-top:0}
+h2,h3,h4{margin-top:0}
 
 /* SKILLS */
 .skills{
@@ -130,7 +130,10 @@ h2,h3{margin-top:0}
   border:1px solid var(--glass);
   margin-bottom:14px;
 }
-.project h4{margin:0 0 6px}
+.project a{
+  display:inline-block;
+  margin-top:8px;
+}
 
 /* SOCIALS */
 .socials{
@@ -149,7 +152,6 @@ h2,h3{margin-top:0}
   color:var(--text);
   font-weight:600;
 }
-.social svg{width:18px;height:18px}
 
 footer{
   text-align:center;
@@ -195,7 +197,6 @@ footer{
       <a class="ghost" href="#projects">View Projects</a>
     </div>
 
-    <!-- SKILLS -->
     <section>
       <h3>Skills</h3>
       <div class="skills">
@@ -212,34 +213,31 @@ footer{
     </section>
   </div>
 
-  <!-- CONTACT -->
   <aside class="card">
     <h3>Contact</h3>
     <a href="mailto:kd.llamanzares@gmail.com">kd.llamanzares@gmail.com</a>
 
     <div class="socials">
-      <a class="social" href="https://github.com/llamanzaresekd" target="_blank">
-        GitHub
-      </a>
-      <a class="social" href="https://www.linkedin.com/in/ken-daniel-llamanzares-b6a0883a0" target="_blank">
-        LinkedIn
-      </a>
+      <a class="social" href="https://github.com/llamanzaresekd" target="_blank">GitHub</a>
+      <a class="social" href="https://www.linkedin.com/in/ken-daniel-llamanzares-b6a0883a0" target="_blank">LinkedIn</a>
     </div>
   </aside>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <h2>Academic Projects</h2>
 
   <div class="project">
     <h4>SwineWatch — ASF Detection System</h4>
-    <p>Thermal + Raspberry Pi camera system for early ASF detection. React dashboard, Firebase realtime data, Cloudinary image storage.</p>
+    <p>Thermal + Raspberry Pi camera system for early ASF detection with a React dashboard, Firebase realtime data, and Cloudinary image storage.</p>
   </div>
 
   <div class="project">
     <h4>Digital Ears — Emotion Detection (MATLAB)</h4>
-    <p>Speech emotion recognition using Short-Time Energy and Mean Energy features with full DSP workflow.</p>
+    <p>Emotion recognition system using MFCC features and machine learning.</p>
+    <a href="https://github.com/print-kendaniel/Digital-Ears" target="_blank" class="ghost">
+      View Source Code
+    </a>
   </div>
 
   <div class="project">
@@ -253,7 +251,6 @@ footer{
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
 <section>
   <h2>Certifications</h2>
   <ul style="color:var(--muted)">
@@ -265,7 +262,6 @@ footer{
   </ul>
 </section>
 
-<!-- EDUCATION -->
 <section>
   <h2>Education</h2>
   <p>
