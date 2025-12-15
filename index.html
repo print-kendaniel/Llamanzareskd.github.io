@@ -134,6 +134,11 @@ h2,h3,h4{margin-top:0}
   display:inline-block;
   margin-top:8px;
 }
+.meta{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:6px;
+}
 
 /* SOCIALS */
 .socials{
@@ -171,7 +176,7 @@ footer{
     <div>
       <h1 style="margin:0">Ken Daniel Llamanzares</h1>
       <p style="margin:0;color:var(--muted)">
-        Computer Engineering • IoT · Embedded · CV · DSP
+        Computer Engineering Student | Embedded Systems · IoT · Computer Vision · DSP
       </p>
     </div>
   </div>
@@ -188,13 +193,14 @@ footer{
   <div class="card">
     <h2>Hi, I’m Ken — I build IoT & AI systems for real-world problems.</h2>
     <p style="color:var(--muted)">
-      Computer Engineering student focused on embedded systems, computer vision,
-      signal processing, and hardware–software integration.
+      I focus on designing and implementing hardware–software solutions,
+      real-time monitoring systems, and intelligent data-driven applications.
     </p>
 
     <div class="cta">
       <a class="primary" href="LlamanzaresKD_Resume.pdf" download>Download CV</a>
       <a class="ghost" href="#projects">View Projects</a>
+      <a class="ghost" href="https://github.com/llamanzaresekd" target="_blank">GitHub</a>
     </div>
 
     <section>
@@ -203,11 +209,12 @@ footer{
         <span class="skill">Python</span>
         <span class="skill">Embedded Systems</span>
         <span class="skill">IoT Development</span>
-        <span class="skill">Sensor Calibration</span>
+        <span class="skill">Raspberry Pi</span>
+        <span class="skill">ESP32</span>
         <span class="skill">Computer Vision</span>
         <span class="skill">Machine Learning</span>
         <span class="skill">MATLAB (DSP)</span>
-        <span class="skill">Cybersecurity Fundamentals</span>
+        <span class="skill">Firebase</span>
         <span class="skill">Hardware–Software Debugging</span>
       </div>
     </section>
@@ -230,14 +237,29 @@ footer{
   <div class="project">
     <h4>SwineWatch — ASF Detection System</h4>
     <p>
-      Thermal + Raspberry Pi camera system for early ASF detection with a React
-      dashboard, Firebase realtime data, and Cloudinary image storage.
+      Surveillance system using Raspberry Pi, thermal camera, and computer vision
+      to detect early indicators of African Swine Fever.
+    </p>
+    <p class="meta">
+      Tech stack: Raspberry Pi, Python, YOLO, Thermal Camera, Firebase, React
+    </p>
+    <p class="meta">
+      Impact: Designed a real-time monitoring system to support early disease detection in pig farms.
     </p>
   </div>
 
   <div class="project">
     <h4>Digital Ears — Emotion Detection (MATLAB)</h4>
-    <p>Emotion recognition system using MFCC features and machine learning.</p>
+    <p>
+      Speech emotion recognition system using MFCC feature extraction and
+      machine learning classification.
+    </p>
+    <p class="meta">
+      Tech stack: MATLAB, DSP, MFCC, Feature Extraction
+    </p>
+    <p class="meta">
+      Impact: Demonstrated end-to-end speech signal processing and emotion classification.
+    </p>
     <a href="https://github.com/print-kendaniel/Digital-Ears" target="_blank" class="ghost">
       View Source Code
     </a>
@@ -245,7 +267,13 @@ footer{
 
   <div class="project">
     <h4>NPK Soil Monitoring System</h4>
-    <p>Arduino-based nutrient monitoring with sensor calibration, threshold logic, and serial data logging.</p>
+    <p>
+      Arduino-based system for monitoring soil nutrient levels with calibrated
+      sensors and serial data logging.
+    </p>
+    <p class="meta">
+      Tech stack: Arduino, Sensors, Embedded C
+    </p>
   </div>
 
   <div class="project">
@@ -254,10 +282,25 @@ footer{
       Cloud-controlled robotic system using ESP32 and Firebase Realtime Database
       for real-time remote motor control.
     </p>
+    <p class="meta">
+      Tech stack: ESP32, Firebase Realtime Database, WiFi, Embedded C++
+    </p>
+    <p class="meta">
+      Impact: Achieved real-time cloud-based control without Bluetooth range limitations.
+    </p>
     <a href="https://github.com/print-kendaniel/MiniBot-ESP32" target="_blank" class="ghost">
       View Source Code
     </a>
   </div>
+</section>
+
+<section>
+  <h2>Currently Working On</h2>
+  <ul style="color:var(--muted)">
+    <li>Improving real-time detection accuracy for SwineWatch using multi-camera data</li>
+    <li>Optimizing embedded system performance on Raspberry Pi and ESP32</li>
+    <li>Building scalable IoT dashboards and cloud-integrated systems</li>
+  </ul>
 </section>
 
 <section>
